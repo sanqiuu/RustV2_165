@@ -1,5 +1,6 @@
 package com.sanqiu.rustv2.util;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -34,9 +35,9 @@ public class ItemUtil {
             return isLog(cmp_materiao);
         }
         String display_name = item.getItemMeta().getDisplayName();
-        if(display_name!=null){
+        if(!display_name.isEmpty()){
             String cmp_displayname = compareItem.getItemMeta().getDisplayName();
-            if(cmp_displayname!=null){
+            if(!cmp_displayname.isEmpty()){
                 return cmp_displayname.equals(display_name);
             }
             return false;

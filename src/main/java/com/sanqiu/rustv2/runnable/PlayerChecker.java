@@ -1,13 +1,10 @@
 package com.sanqiu.rustv2.runnable;
 
 import com.sanqiu.rustv2.RustV2;
-import com.sanqiu.rustv2.model.Decomposer;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryView;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class PlayerChecker extends BukkitRunnable {

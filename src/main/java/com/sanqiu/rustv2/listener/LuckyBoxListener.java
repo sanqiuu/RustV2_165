@@ -32,12 +32,6 @@ public class LuckyBoxListener implements Listener {
         }
     }
     @EventHandler
-    public void onLuckyBoxInventoryClose(InventoryCloseEvent event) {
-        Inventory inventory = event.getInventory();
-        if (!LuckyBox.isLuckBox(event.getView())) return;
-        LuckyBox.CloseMenu(inventory,(Player) event.getPlayer());
-    }
-    @EventHandler
     public void onLuckyBoxInventoryClick(InventoryClickEvent event) {
         Entity entity =  event.getWhoClicked();
         if (!LuckyBox.isLuckBox(event.getView())) return;

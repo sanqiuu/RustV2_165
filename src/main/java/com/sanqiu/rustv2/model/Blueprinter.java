@@ -83,7 +83,7 @@ public class Blueprinter {
                     }
                 }
             }
-        }.runTaskLaterAsynchronously(RustV2.getPlugin(), 2);
+        }.runTaskLaterAsynchronously(RustV2.getPlugin(), 1);
 
     }
     public static boolean canDrag(Set<Integer> slot){

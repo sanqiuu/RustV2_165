@@ -43,7 +43,7 @@ class CraftingTableHolder implements InventoryHolder {
 
 }
 enum MATERIAL_TYPE {
-    WOOD("木头",Material.LEGACY_LOG,0),
+    WOOD("木头",Material.OAK_LOG,0),
     STONE("圆石",Material.COBBLESTONE,0),
     REDSTONE("红石",Material.REDSTONE,0),
     LEATHER("皮革",Material.LEATHER,0),
@@ -52,7 +52,7 @@ enum MATERIAL_TYPE {
     FEATHER("羽毛",Material.FEATHER,0),
 
     STRING("线",Material.STRING,0),
-    WOOL("羊毛",Material.LEGACY_WOOL,0),
+    WOOL("羊毛",Material.WHITE_WOOL,0),
     FLINT("燧石",Material.FLINT,0),
     CLOTH("布料",Material.PAPER,1),
     TORCH("火把",Material.TORCH,0);
@@ -146,7 +146,7 @@ public class CraftingTable {
         }
         Blueprint blueprint = new Blueprint(player,itemStack);
         if(needBlueprint && !blueprint.hasBlueprint()){
-            itemStack  = new ItemStack(Material.LEGACY_STAINED_GLASS_PANE);
+            itemStack  = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
             if(name!=null){
                 itemMeta = itemStack.getItemMeta();
                 itemMeta.setDisplayName(name);
@@ -160,7 +160,7 @@ public class CraftingTable {
         ItemStack itemStack = item;
         Blueprint blueprint = new Blueprint(player,itemStack);
         if(needBlueprint && !blueprint.hasBlueprint()){
-            itemStack  = new ItemStack(Material.LEGACY_STAINED_GLASS_PANE);
+            itemStack  = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
             ItemMeta itemMeta =  item.getItemMeta();
             String name = itemMeta.getDisplayName();
             if(name!=null){
@@ -214,9 +214,9 @@ public class CraftingTable {
         ItemStack item3 = toItem(Material.ARROW,"子弹",1,false);
         ItemStack item4 = toItem(Material.IRON_SWORD,"武器",1,false);
         ItemStack item5 = toItem(Material.IRON_CHESTPLATE,"护甲",1,false);
-        ItemStack item6 = toItem(Material.LEGACY_WOOD,"建筑方块",1,false);
+        ItemStack item6 = toItem(Material.OAK_PLANKS,"建筑方块",1,false);
         ItemStack item7 = toItem(Material.TNT,"爆炸物",1,false);
-        ItemStack item8 = toItem(Material.LEGACY_BOAT,"载具",1,false);
+        ItemStack item8 = toItem(Material.OAK_BOAT,"载具",1,false);
         ItemStack item9 = toItem(Material.FISHING_ROD,"测试",1,false);
         inventory.setItem(0,item1);
         inventory.setItem(1,item2);
@@ -262,7 +262,7 @@ public class CraftingTable {
         inv.setItem(5,item);
         item = toItem(Material.REDSTONE,null,64,false);
         inv.setItem(6,item);
-        item = toItem(Material.LEGACY_LOG,null,64,false);
+        item = toItem(Material.OAK_LOG,null,64,false);
         inv.setItem(7,item);
         item = toItem(Material.COBBLESTONE,null,64,false);
         inv.setItem(8,item);
@@ -280,19 +280,19 @@ public class CraftingTable {
     }
     private void InitRustBlockInventory(Inventory inv,Player player){
         ItemStack item ;
-        item = toItem(Material.LEGACY_WOOD,null,1,false);
+        item = toItem(Material.OAK_PLANKS,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,7);
         inv.setItem(0,item);
-        item = toItem(Material.LEGACY_SMOOTH_BRICK,null,1,false);
+        item = toItem(Material.STONE_BRICKS,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.STONE,12);
         inv.setItem(1,item);
         item = toItem(Material.FURNACE,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.STONE,25);
         inv.setItem(2,item);
-        item = toItem(Material.LEGACY_WOOD_DOOR,null,1,false);
+        item = toItem(Material.OAK_DOOR,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,240);
         inv.setItem(3,item);
-        item = toItem(Material.LEGACY_BED,null,1,false);
+        item = toItem(Material.RED_BED,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.CLOTH,25);
         MATERIAL.addLore(item,MATERIAL_TYPE.LEATHER,10);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,60);
@@ -310,48 +310,46 @@ public class CraftingTable {
         MATERIAL.addLore(item,MATERIAL_TYPE.COAL,5);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,3);
         inv.setItem(8,item);
-        item = toItem(Material.LEGACY_SIGN,null,1,false);
+        item = toItem(Material.OAK_SIGN,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,30);
         inv.setItem(9,item);
-        item = toItem(Material.LEGACY_TRAP_DOOR,null,1,false);
+        item = toItem(Material.OAK_TRAPDOOR,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,50);
         MATERIAL.addLore(item,MATERIAL_TYPE.IRON,25);
         inv.setItem(10,item);
-        item = toItem(Material.LEGACY_WOOD_STAIRS,null,1,false);
+        item = toItem(Material.OAK_STAIRS,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,7);
         inv.setItem(11,item);
-        item = toItem(Material.LEGACY_WOOL,null,1,false);
+        item = toItem(Material.WHITE_WOOL,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.CLOTH,5);
         inv.setItem(12,item);
         item = toItem(Material.IRON_DOOR,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.IRON,100);
         inv.setItem(13,item);
-        item = toItem(Material.LEGACY_RAILS,null,1,false);
+        item = toItem(Material.RAIL,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.IRON,10);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,5);
         inv.setItem(14,item);
-        item = toItem(Material.LEGACY_IRON_FENCE,null,1,false);
+        item = toItem(Material.OAK_FENCE,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.IRON,20);
         inv.setItem(15,item);
-        item = toItem(Material.LEGACY_SMOOTH_STAIRS,null,1,false);
+        item = toItem(Material.STONE_BRICKS,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.STONE,10);
         inv.setItem(16,item);
 
-        item = toItem(Material.LEGACY_SMOOTH_BRICK,null,1,false);
-        item.setDurability((short) 2);
+        item = toItem(Material.CHISELED_STONE_BRICKS,null,1,false);
 
         MATERIAL.addLore(item,MATERIAL_TYPE.STONE,5);
         inv.setItem(17,item);
-        item = toItem(Material.LEGACY_SMOOTH_BRICK,null,1,false);
-        item.setDurability((short) 3);
+        item = toItem(Material.CRACKED_STONE_BRICKS,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.STONE,15);
         inv.setItem(18,item);
-        item = toItem(Material.LEGACY_REDSTONE_LAMP_OFF,null,1,false);
+        item = toItem(Material.REDSTONE_LAMP,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.TORCH,1);
         MATERIAL.addLore(item,MATERIAL_TYPE.REDSTONE,5);
         MATERIAL.addLore(item,MATERIAL_TYPE.IRON,2);
         inv.setItem(19,item);
-        item = toItem(Material.LEGACY_STAINED_GLASS,null,1,false);
+        item = toItem(Material.WHITE_STAINED_GLASS,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.STONE,20);
         inv.setItem(20,item);
     }
@@ -496,7 +494,7 @@ public class CraftingTable {
         inv.setItem(2,item);
     }
     private void InitVehicleInventory(Inventory inv,Player player){
-        ItemStack item = toItem(Material.LEGACY_BOAT,null,1,false);
+        ItemStack item = toItem(Material.OAK_BOAT,null,1,false);
         MATERIAL.addLore(item,MATERIAL_TYPE.WOOD,500);
         MATERIAL.addLore(item,MATERIAL_TYPE.IRON,100);
         inv.setItem(0,item);
@@ -600,7 +598,7 @@ public class CraftingTable {
                 }else{
                     if(item!=null){
                         Blueprint blueprint = new Blueprint(player,item);
-                        if( item.getType() == Material.LEGACY_STAINED_GLASS_PANE
+                        if( item.getType() == Material.BLACK_STAINED_GLASS_PANE
                                 && !blueprint.hasBlueprint()){
                             return;
                         }

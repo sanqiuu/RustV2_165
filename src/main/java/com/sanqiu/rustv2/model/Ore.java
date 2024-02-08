@@ -7,9 +7,13 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
+class RustData{
+    public static Material waste = Material.NETHERITE_SCRAP;//废料
+    public static Material blurprintType = Material.PAPER;
+}
 
 public class Ore {
+    public static RustData rustData;
     public static int OreDropRate = 5;
     public static int AnimalDropRate = 5;
     private static int OreRecoverTicks = 20*60;
