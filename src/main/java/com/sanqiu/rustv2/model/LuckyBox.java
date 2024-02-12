@@ -6,12 +6,15 @@ import com.sanqiu.rustv2.util.ItemUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.EnchantmentStorageMeta;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
@@ -22,58 +25,33 @@ public class LuckyBox {
     private static final Material LuckyBoxType = Material.LECTERN;
     public static void OpenMenu(Player player){
         Inventory inventory = Bukkit.createInventory(null , InventoryType.DISPENSER,menuTitle);
-        for(int i=0;i<inventory.getSize();i++){
-            inventory.setItem(i,new ItemStack(RustData.waste,i+1));
-        }
+        inventory.setItem(0,new ItemStack(Material.OAK_LOG,64));
+        inventory.setItem(1,new ItemStack(Material.STONE,32));
+        inventory.setItem(2,new ItemStack(Material.COAL,32));
+        inventory.setItem(3,new ItemStack(Material.IRON_INGOT,4));
+        inventory.setItem(4,new ItemStack(Material.COBBLESTONE,64));
+        inventory.setItem(5,new ItemStack(Material.DIRT,64));
+        inventory.setItem(6,new ItemStack(Material.SAND,64));
+        inventory.setItem(7,new ItemStack(Material.DIAMOND,1));
+        inventory.setItem(8,new ItemStack(Material.GOLD_INGOT,2));
         player.openInventory(inventory);
     }
     private static void randomAward(Player player,Inventory inventory){
-       ItemStack[] itemArray = {new  ItemStack(Material.BREAD),
-               new  ItemStack(Material.BREAD),
-               new  ItemStack(Material.APPLE),
-               new  ItemStack(Material.PAPER),
-               new  ItemStack(Material.BRICK_WALL),
-               new  ItemStack(Material.YELLOW_BED),
-               new  ItemStack(Material.WHITE_WOOL),
-               new  ItemStack(Material.RED_BED),
-               new  ItemStack(Material.GRAY_BED),
-               new  ItemStack(Material.COAL),
-               new  ItemStack(Material.OAK_LOG),
-               new  ItemStack(Material.DARK_OAK_DOOR),
-               new  ItemStack(Material.IRON_DOOR),
-               new  ItemStack(Material.GREEN_BED),
-               new  ItemStack(Material.STRING),
-               new  ItemStack(Material.GOLD_BLOCK),
-               new  ItemStack(Material.OAK_PRESSURE_PLATE),
-               new  ItemStack(Material.INFESTED_CRACKED_STONE_BRICKS),
-               new  ItemStack(Material.IRON_SWORD),
-               new  ItemStack(Material.CROSSBOW),
-               new  ItemStack(Material.GOLDEN_AXE),
-               new  ItemStack(Material.WHITE_WOOL),
-               new  ItemStack(Material.OAK_SLAB),
-               new  ItemStack(Material.CHISELED_STONE_BRICKS),
-               new  ItemStack(Material.EMERALD_BLOCK),
-               new  ItemStack(Material.DIAMOND_HELMET),
-               new  ItemStack(Material.CRIMSON_BUTTON),
-               new  ItemStack(Material.ACACIA_WOOD),
-               new  ItemStack(Material.GOLDEN_AXE),
-               new  ItemStack(Material.DARK_OAK_WOOD),
-               new  ItemStack(Material.DIAMOND_SWORD),
-               new  ItemStack(Material.FLETCHING_TABLE),
-               new  ItemStack(Material.SAND),
-               new  ItemStack(Material.STONE_SWORD),
-               new  ItemStack(Material.IRON_SWORD),
-               new  ItemStack(Material.CHAIN),
-               new  ItemStack(Material.BLACK_WOOL),
-               new  ItemStack(Material.HORN_CORAL_BLOCK),
-               new  ItemStack(Material.DIAMOND),
-               new  ItemStack(Material.GRAY_BED),
-               new  ItemStack(Material.GOLDEN_AXE),
-               new  ItemStack(Material.GOLDEN_HOE),
-               new  ItemStack(Material.GOLD_NUGGET),
-               new  ItemStack(Material.DARK_OAK_BOAT),
-               new  ItemStack(Material.DIAMOND_LEGGINGS)};
-        List<ItemStack> list = new LinkedList<ItemStack>(Arrays.asList(itemArray));
+        List<ItemStack> list = new LinkedList<ItemStack>();
+        Random random = new Random();
+        for(int i=0;i<inventory.getSize();i++){
+
+            Enchantment[] effect_array = Enchantment.values();
+            Enchantment effect = effect_array[random.nextInt(effect_array.length)];
+            int level = random.nextInt(effect.getMaxLevel())+effect.getStartLevel();
+            ItemStack itemStack = new ItemStack(Material.ENCHANTED_BOOK);
+
+            EnchantmentStorageMeta esm = (EnchantmentStorageMeta) itemStack.getItemMeta();
+
+            esm.addStoredEnchant(effect, level, true);
+            itemStack.setItemMeta(esm);
+            list.add(itemStack);
+        }
         Collections.shuffle(list);
         inventory.setContents(list.toArray(new ItemStack[0]));
 

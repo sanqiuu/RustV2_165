@@ -41,35 +41,42 @@ class SupplyData{
             new SUPPLY_ELEMENT(Ore.createBlueprint("汽车",1),1)
 
     };
+    public static SUPPLY_ELEMENT[] OreList = {
+            new SUPPLY_ELEMENT(new ItemStack(Material.COAL,1),100),
+            new SUPPLY_ELEMENT(new ItemStack(Material.REDSTONE,1),100),
+            new SUPPLY_ELEMENT(new ItemStack(Material.COBBLESTONE,1),650),
+            new SUPPLY_ELEMENT(new ItemStack(Material.GOLD_ORE,1),45),
+            new SUPPLY_ELEMENT(new ItemStack(Material.GUNPOWDER,1),5),
+            new SUPPLY_ELEMENT(new ItemStack(Material.IRON_ORE,1),100),
+    };
 }
 class SupplyBoxUtil{
 
-    private static boolean isInventoryEmpty(final Inventory inventory) {
-        return Arrays.stream(inventory.getContents()).noneMatch(Objects::nonNull);
 
-    }
-    public static void addSupply(Inventory inventory,SUPPLY_ELEMENT[] SupplyList){
-        if(!isInventoryEmpty(inventory)) return;
+    public static ItemStack  getSupply(SUPPLY_ELEMENT[] SupplyList){
+
         int totalWeight = 0;
         for (SUPPLY_ELEMENT element : SupplyList){
             totalWeight += element.weight;
         }
-        for(int num=0;num<3;num++){
-            Random random = new Random();
-            int randomIndex = -1;
-            int randomWeight = random.nextInt(totalWeight);
-            for (int i = 0; i < SupplyList.length; i++){
-                if (randomWeight < SupplyList[i].weight){
-                    randomIndex = i;
-                    break;
-                }
-                randomWeight -= SupplyList[i].weight;
+        Random random = new Random();
+        int randomIndex = -1;
+        int randomWeight = random.nextInt(totalWeight);
+        for (int i = 0; i < SupplyList.length; i++){
+            if (randomWeight < SupplyList[i].weight){
+                randomIndex = i;
+                break;
             }
-            inventory.addItem(SupplyList[randomIndex].itemStack);
+            randomWeight -= SupplyList[i].weight;
         }
+        return SupplyList[randomIndex].itemStack;
     }
 }
 public class SupplyBox {
+    private static boolean isInventoryEmpty(final Inventory inventory) {
+        return Arrays.stream(inventory.getContents()).noneMatch(Objects::nonNull);
+
+    }
     private static List<Location> list = new ArrayList<>();
     public static boolean isSupplyBox(Block block){
         return block.getType() == Material.BARREL;
@@ -80,7 +87,12 @@ public class SupplyBox {
             if(isSupplyBox(block)){
                 Barrel barrel = (Barrel)block.getState();
                 Inventory inventory = barrel.getInventory();
-                SupplyBoxUtil.addSupply(inventory,SupplyData.SupplyList);
+                if(!isInventoryEmpty(inventory)) return;
+                for(int num=0;num<3;num++){
+                    ItemStack item = SupplyBoxUtil.getSupply(SupplyData.SupplyList);
+                    inventory.addItem(item);
+                }
+
 
             }
         }
@@ -88,8 +100,16 @@ public class SupplyBox {
     public static void open(Block block){
         Barrel barrel = (Barrel)block.getState();
         Inventory inventory = barrel.getInventory();
-        SupplyBoxUtil.addSupply(inventory,SupplyData.SupplyList);
+        if(!isInventoryEmpty(inventory)) return;
+        for(int num=0;num<3;num++){
+            ItemStack item = SupplyBoxUtil.getSupply(SupplyData.SupplyList);
+            inventory.addItem(item);
+        }
         list.add(block.getLocation());
+    }
+    public static Material changeStone(){
+        ItemStack item = SupplyBoxUtil.getSupply(SupplyData.OreList);
+        return item.getType();
     }
     public static boolean isSupplyBox(Inventory inventory){
         return  inventory.getType() ==InventoryType.BARREL;

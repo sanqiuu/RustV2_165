@@ -2,6 +2,7 @@ package com.sanqiu.rustv2;
 
 import com.jeff_media.customblockdata.CustomBlockData;
 import com.sanqiu.rustv2.command.MainCmd;
+import com.sanqiu.rustv2.interfaze.RustRecipe;
 import com.sanqiu.rustv2.listener.*;
 import com.sanqiu.rustv2.model.CraftingTable;
 import com.sanqiu.rustv2.runnable.PlayerChecker;
@@ -15,22 +16,25 @@ public final class RustV2 extends JavaPlugin {
         // Plugin startup logic
         setPlugin(this);
         CustomBlockData.registerListener(this);
-        getServer().getPluginCommand("rustmc").setExecutor(new MainCmd());
-        CraftingTable.RegisterCraftingTableRecipe();
-        new PlayerChecker().runTaskTimer(this, 0,20);
-        new SupplyBoxUpdater().runTaskTimer(this, 0,10*20);
-        getServer().getPluginManager().registerEvents(new BlueprintListener(), this);
-        getServer().getPluginManager().registerEvents(new CraftingTableListener(), this);
-        //getServer().getPluginManager().registerEvents(new OreListener(), this);
-        //getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        //getServer().getPluginCommand("rustmc").setExecutor(new MainCmd());
+        //CraftingTable.RegisterCraftingTableRecipe();
+        new PlayerChecker().runTaskTimer(this, 0,2*20);
+        RustRecipe.RegisterRustRecipe();
+        //new SupplyBoxUpdater().runTaskTimer(this, 0,10*20);
+        //getServer().getPluginManager().registerEvents(new BlueprintListener(), this);
+        //getServer().getPluginManager().registerEvents(new CraftingTableListener(), this);
         //getServer().getPluginManager().registerEvents(new TNTListener(), this);
+        //getServer().getPluginManager().registerEvents(new RecyclerListener(), this);
+        //getServer().getPluginManager().registerEvents(new VendingMachineListener(), this);
+        //getServer().getPluginManager().registerEvents(new BlueprinterListener(), this);
+        //getServer().getPluginManager().registerEvents(new OreListener(), this);
         //getServer().getPluginManager().registerEvents(new LifeBlockListener(), this);
-        getServer().getPluginManager().registerEvents(new RespawnBedListener(), this);
-        getServer().getPluginManager().registerEvents(new RecyclerListener(), this);
-        //getServer().getPluginManager().registerEvents(new SupplyBoxListener(), this);
+        getServer().getPluginManager().registerEvents(new SupplyBoxListener(), this);
         getServer().getPluginManager().registerEvents(new LuckyBoxListener(), this);
-        getServer().getPluginManager().registerEvents(new VendingMachineListener(), this);
-        getServer().getPluginManager().registerEvents(new BlueprinterListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        getServer().getPluginManager().registerEvents(new RespawnBedListener(), this);
+        getServer().getPluginManager().registerEvents(new RadioListener(), this);
+        getServer().getPluginManager().registerEvents(new RustRecipeListener(), this);
         getLogger().info("已成功加载rustmc插件.");
     }
 

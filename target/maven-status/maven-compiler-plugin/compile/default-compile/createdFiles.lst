@@ -1,4 +1,5 @@
 com\sanqiu\rustv2\model\Ore.class
+com\sanqiu\rustv2\listener\RustRecipeListener.class
 com\sanqiu\rustv2\model\RespawnBed.class
 com\sanqiu\rustv2\listener\LifeBlockListener.class
 com\sanqiu\rustv2\model\SupplyBoxUtil.class
@@ -14,6 +15,7 @@ com\sanqiu\rustv2\command\MainCmd.class
 com\sanqiu\rustv2\model\CraftingTable.class
 com\sanqiu\rustv2\model\Ore$2.class
 com\sanqiu\rustv2\RustV2.class
+com\sanqiu\rustv2\interfaze\RustItem.class
 com\sanqiu\rustv2\model\Recycler.class
 com\sanqiu\rustv2\model\Recycler$1.class
 com\sanqiu\rustv2\model\CraftingTableHolder.class
@@ -32,6 +34,7 @@ com\sanqiu\rustv2\interfaze\GunInterface$GUN_TYPE.class
 com\sanqiu\rustv2\model\Blueprinter.class
 com\sanqiu\rustv2\model\PlayerUtils.class
 com\sanqiu\rustv2\listener\OreListener.class
+com\sanqiu\rustv2\listener\RadioListener.class
 com\sanqiu\rustv2\model\MATERIAL.class
 com\sanqiu\rustv2\model\SupplyData.class
 com\sanqiu\rustv2\listener\VendingMachineListener.class
@@ -58,5 +61,7 @@ com\sanqiu\rustv2\listener\BlueprinterListener.class
 com\sanqiu\rustv2\listener\TNTListener.class
 com\sanqiu\rustv2\listener\BlueprintListener.class
 com\sanqiu\rustv2\interfaze\GunInterface.class
+com\sanqiu\rustv2\interfaze\RustRecipe.class
 com\sanqiu\rustv2\model\Recycler$3.class
 com\sanqiu\rustv2\model\VendingMachine.class
+com\sanqiu\rustv2\model\Radio.class
