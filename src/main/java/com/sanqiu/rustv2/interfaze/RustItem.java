@@ -433,7 +433,7 @@ public enum RustItem {
             "  ==: org.bukkit.inventory.ItemStack\n" +
             "  v: 2586\n" +
             "  type: ARROW\n" +
-            "  amount: 11\n" +
+            "  amount: 1\n" +
             "  meta:\n" +
             "    ==: ItemMeta\n" +
             "    meta-type: UNSPECIFIC\n" +
