@@ -441,7 +441,233 @@ public enum RustItem {
             "    lore:\n" +
             "    - '{\"italic\":false,\"color\":\"gray\",\"text\":\"ammo\"}'\n" +
             "    PublicBukkitValues:\n" +
-            "      weaponmechanics:ammo-name: Rocket");
+            "      weaponmechanics:ammo-name: Rocket"),
+    BurstTower("Burst炮台","Item:\n" +
+            "  ==: org.bukkit.inventory.ItemStack\n" +
+            "  v: 2586\n" +
+            "  type: COAL_BLOCK\n" +
+            "  meta:\n" +
+            "    ==: ItemMeta\n" +
+            "    meta-type: UNSPECIFIC\n" +
+            "    display-name: '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"Burst\n" +
+            "      Turret \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gold\",\"text\":\"Block\"}],\"text\":\"\"}'\n" +
+            "    lore:\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Fast\n" +
+            "      speed turret with no extra abilities.\"}],\"text\":\"\"}'\n" +
+            "    - '{\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Level:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"yellow\",\"text\":\"1\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Damage:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"1.0\"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"-\"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"1.5\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Cooldown:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"0.75\n" +
+            "      seconds\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Range:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"10.0\n" +
+            "      blocks\"}],\"text\":\"\"}'\n" +
+            "    custom-model-data: 0\n" +
+            "    ItemFlags:\n" +
+            "    - HIDE_ATTRIBUTES\n" +
+            "    - HIDE_UNBREAKABLE\n" +
+            "    internal: H4sIAAAAAAAA/+NiYGBmkEnOzy3ISa2ILyktKkotKYbS8TmpZak5DAwMjBwMkjiUZKYwsDqVFhWXMAAAqPfnAEoAAAA="),
+    BurstAmmo("Burst子弹","Item:\n" +
+            "  ==: org.bukkit.inventory.ItemStack\n" +
+            "  v: 2586\n" +
+            "  type: ARROW\n" +
+            "  meta:\n" +
+            "    ==: ItemMeta\n" +
+            "    meta-type: UNSPECIFIC\n" +
+            "    display-name: '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gold\",\"text\":\"Burst\n" +
+            "      Turret \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Ammunition\"}],\"text\":\"\"}'\n" +
+            "    lore:\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Place\n" +
+            "      this item in your turret inventory\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"to\n" +
+            "      start shooting.\"}],\"text\":\"\"}'\n" +
+            "    custom-model-data: 0\n" +
+            "    ItemFlags:\n" +
+            "    - HIDE_ATTRIBUTES\n" +
+            "    - HIDE_UNBREAKABLE\n" +
+            "    internal: H4sIAAAAAAAA/+NiYOBgkE3Ozy3ISa2ILyktKkotKY5PzM0tzcssyczPi89MYWB1Ki0qLmEAAOahB0grAAAA"),
+    healTower("heal炮台","Item:\n" +
+            "  ==: org.bukkit.inventory.ItemStack\n" +
+            "  v: 2586\n" +
+            "  type: LAPIS_BLOCK\n" +
+            "  meta:\n" +
+            "    ==: ItemMeta\n" +
+            "    meta-type: UNSPECIFIC\n" +
+            "    display-name: '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"Healing\n" +
+            "      Turret \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gold\",\"text\":\"Block\"}],\"text\":\"\"}'\n" +
+            "    lore:\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Slow\n" +
+            "      speed turret that heals\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"multiple\n" +
+            "      allies.\"}],\"text\":\"\"}'\n" +
+            "    - '{\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Level:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"yellow\",\"text\":\"1\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Heal:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"2.0\"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"-\"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"4.0\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Cooldown:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"6.0\n" +
+            "      seconds\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Range:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"5.0\n" +
+            "      blocks\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Maximum\n" +
+            "      Targets: \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"2\"}],\"text\":\"\"}'\n" +
+            "    custom-model-data: 0\n" +
+            "    ItemFlags:\n" +
+            "    - HIDE_ATTRIBUTES\n" +
+            "    - HIDE_UNBREAKABLE\n" +
+            "    internal: H4sIAAAAAAAA/+NiYGBmkEnOzy3ISa2ILyktKkotKYbS8TmpZak5DAwMjBwMkjiUZKYwsHukJuZk5qUzAACoD0JxTAAAAA=="),
+    healAmmo("heal子弹","Item:\n" +
+            "  ==: org.bukkit.inventory.ItemStack\n" +
+            "  v: 2586\n" +
+            "  type: ARROW\n" +
+            "  meta:\n" +
+            "    ==: ItemMeta\n" +
+            "    meta-type: UNSPECIFIC\n" +
+            "    display-name: '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gold\",\"text\":\"Healing\n" +
+            "      Turret \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Ammunition\"}],\"text\":\"\"}'\n" +
+            "    lore:\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Place\n" +
+            "      this item in your turret inventory\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"to\n" +
+            "      start shooting.\"}],\"text\":\"\"}'\n" +
+            "    custom-model-data: 0\n" +
+            "    ItemFlags:\n" +
+            "    - HIDE_ATTRIBUTES\n" +
+            "    - HIDE_UNBREAKABLE\n" +
+            "    internal: H4sIAAAAAAAA/+NiYOBgkE3Ozy3ISa2ILyktKkotKY5PzM0tzcssyczPi89MYWD3SE3MycxLZwAAAtGwnS0AAAA="),
+    siegeTower("siege炮台","Item:\n" +
+            "  ==: org.bukkit.inventory.ItemStack\n" +
+            "  v: 2586\n" +
+            "  type: IRON_BLOCK\n" +
+            "  meta:\n" +
+            "    ==: ItemMeta\n" +
+            "    meta-type: UNSPECIFIC\n" +
+            "    display-name: '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"Siege\n" +
+            "      Turret \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gold\",\"text\":\"Block\"}],\"text\":\"\"}'\n" +
+            "    lore:\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Slow\n" +
+            "      speed turret that damages multiple\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"enemies\n" +
+            "      on every hit.\"}],\"text\":\"\"}'\n" +
+            "    - '{\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Level:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"yellow\",\"text\":\"1\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Damage:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"4.0\"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"-\"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"9.0\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Cooldown:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"3.0\n" +
+            "      seconds\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Range:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"11.0\n" +
+            "      blocks\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Explosion\n" +
+            "      Radius: \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"1.5\n" +
+            "      blocks\"}],\"text\":\"\"}'\n" +
+            "    custom-model-data: 0\n" +
+            "    ItemFlags:\n" +
+            "    - HIDE_ATTRIBUTES\n" +
+            "    - HIDE_UNBREAKABLE\n" +
+            "    internal: H4sIAAAAAAAA/+NiYGBmkEnOzy3ISa2ILyktKkotKYbS8TmpZak5DAwMjBwMkjiUZKYwsAZnpqanMgAAjxtF6EoAAAA="),
+    siegeAmmo("siege子弹","Item:\n" +
+            "  ==: org.bukkit.inventory.ItemStack\n" +
+            "  v: 2586\n" +
+            "  type: ARROW\n" +
+            "  meta:\n" +
+            "    ==: ItemMeta\n" +
+            "    meta-type: UNSPECIFIC\n" +
+            "    display-name: '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gold\",\"text\":\"Siege\n" +
+            "      Turret \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Ammunition\"}],\"text\":\"\"}'\n" +
+            "    lore:\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Place\n" +
+            "      this item in your turret inventory\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"to\n" +
+            "      start shooting.\"}],\"text\":\"\"}'\n" +
+            "    custom-model-data: 0\n" +
+            "    ItemFlags:\n" +
+            "    - HIDE_ATTRIBUTES\n" +
+            "    - HIDE_UNBREAKABLE\n" +
+            "    internal: H4sIAAAAAAAA/+NiYOBgkE3Ozy3ISa2ILyktKkotKY5PzM0tzcssyczPi89MYWANzkxNT2UAAMFNpaArAAAA"),
+    slowTower("slow炮台","Item:\n" +
+            "  ==: org.bukkit.inventory.ItemStack\n" +
+            "  v: 2586\n" +
+            "  type: PURPLE_TERRACOTTA\n" +
+            "  meta:\n" +
+            "    ==: ItemMeta\n" +
+            "    meta-type: UNSPECIFIC\n" +
+            "    display-name: '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"Slowness\n" +
+            "      Turret \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gold\",\"text\":\"Block\"}],\"text\":\"\"}'\n" +
+            "    lore:\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Special\n" +
+            "      turret that damages and\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"slows\n" +
+            "      enemies.\"}],\"text\":\"\"}'\n" +
+            "    - '{\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Level:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"yellow\",\"text\":\"1\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Damage:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"1.0\"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"-\"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"2.5\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Cooldown:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"1.5\n" +
+            "      seconds\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Range:\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"green\",\"text\":\"15.0\n" +
+            "      blocks\"}],\"text\":\"\"}'\n" +
+            "    - '{\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"yellow\",\"text\":\"20.0%\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"probability\n" +
+            "      of applying \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"light_purple\",\"text\":\"slowness\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"dark_gray\",\"text\":\"?\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"for\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"yellow\",\"text\":\"5\n" +
+            "      \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"seconds.\"}],\"text\":\"\"}'\n" +
+            "    custom-model-data: 0\n" +
+            "    ItemFlags:\n" +
+            "    - HIDE_ATTRIBUTES\n" +
+            "    - HIDE_UNBREAKABLE\n" +
+            "    internal: H4sIAAAAAAAA/+NiYGBmkEnOzy3ISa2ILyktKkotKYbS8TmpZak5DAwMjBwMkjiUZKYwcATn5JfnpRYXMwAA3+mdiU0AAAA="),
+    slowAmmo("slow子弹","Item:\n" +
+            "  ==: org.bukkit.inventory.ItemStack\n" +
+            "  v: 2586\n" +
+            "  type: ARROW\n" +
+            "  meta:\n" +
+            "    ==: ItemMeta\n" +
+            "    meta-type: UNSPECIFIC\n" +
+            "    display-name: '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gold\",\"text\":\"Slowness\n" +
+            "      Turret \"},{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Ammunition\"}],\"text\":\"\"}'\n" +
+            "    lore:\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"Place\n" +
+            "      this item in your turret inventory\"}],\"text\":\"\"}'\n" +
+            "    - '{\"extra\":[{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"gray\",\"text\":\"to\n" +
+            "      start shooting.\"}],\"text\":\"\"}'\n" +
+            "    custom-model-data: 0\n" +
+            "    ItemFlags:\n" +
+            "    - HIDE_ATTRIBUTES\n" +
+            "    - HIDE_UNBREAKABLE\n" +
+            "    internal: H4sIAAAAAAAA/+NiYOBgkE3Ozy3ISa2ILyktKkotKY5PzM0tzcssyczPi89MYeAIzskvz0stLmYAAPdRcr8uAAAA");
     private final String name;
     public final String itemstackString;
     RustItem(String name,String itemstackString) {

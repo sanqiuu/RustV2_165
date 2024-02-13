@@ -130,5 +130,79 @@ public class RustRecipe {
         recipe.setIngredient('B', Material.COAL);
         recipe.setIngredient('C', Material.IRON_NUGGET);
         plugin.getServer().addRecipe(recipe);
+        //领地柜
+        item = new ItemStack(Material.BEACON);
+        key = new NamespacedKey(plugin, "BEACON");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("AAA", "ABA", "CCC");
+        recipe.setIngredient('A', Material.GLASS);
+        recipe.setIngredient('B', Material.IRON_BLOCK);
+        recipe.setIngredient('C', Material.GOLD_BLOCK);
+        plugin.getServer().addRecipe(recipe);
+        //Burst炮台
+        item = ItemUtil.stringToItem(RustItem.BurstTower.itemstackString);
+        key = new NamespacedKey(plugin, "BurstTower");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("AAX", "AAX", "XXX");
+        recipe.setIngredient('A', Material.IRON_BLOCK);
+        plugin.getServer().addRecipe(recipe);
+        //Burst子弹
+        item = ItemUtil.stringToItem(RustItem.BurstAmmo.itemstackString);
+        key = new NamespacedKey(plugin, "BurstAmmo");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("AAX", "AAX", "XXX");
+        recipe.setIngredient('A', Material.COBBLESTONE);
+        plugin.getServer().addRecipe(recipe);
+        //siege炮台
+        item = ItemUtil.stringToItem(RustItem.siegeTower.itemstackString);
+        key = new NamespacedKey(plugin, "siegeTower");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("XAA", "XAA", "XXX");
+        recipe.setIngredient('A', Material.IRON_BLOCK);
+        plugin.getServer().addRecipe(recipe);
+        //siege子弹
+        item = ItemUtil.stringToItem(RustItem.siegeAmmo.itemstackString);
+        key = new NamespacedKey(plugin, "siegeAmmo");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("XAA", "XAA", "XXX");
+        recipe.setIngredient('A', Material.COBBLESTONE);
+        plugin.getServer().addRecipe(recipe);
+        //slow炮台
+        item = ItemUtil.stringToItem(RustItem.slowTower.itemstackString);
+        key = new NamespacedKey(plugin, "slowTower");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("XXX", "AAX", "AAX");
+        recipe.setIngredient('A', Material.IRON_BLOCK);
+        plugin.getServer().addRecipe(recipe);
+        //slow子弹
+        item = ItemUtil.stringToItem(RustItem.slowAmmo.itemstackString);
+        key = new NamespacedKey(plugin, "slowAmmo");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("XXX", "AAX", "AAX");
+        recipe.setIngredient('A', Material.COBBLESTONE);
+        plugin.getServer().addRecipe(recipe);
+        //heal炮台
+        item = ItemUtil.stringToItem(RustItem.healTower.itemstackString);
+        key = new NamespacedKey(plugin, "healTower");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("XXX", "XAA", "XAA");
+        recipe.setIngredient('A', Material.IRON_BLOCK);
+        plugin.getServer().addRecipe(recipe);
+        //heal子弹
+        item = ItemUtil.stringToItem(RustItem.healAmmo.itemstackString);
+        key = new NamespacedKey(plugin, "healAmmo");
+        list.add(key);
+        recipe = new ShapedRecipe(key,item);
+        recipe.shape("XXX", "XAA", "XAA");
+        recipe.setIngredient('A', Material.COBBLESTONE);
+        plugin.getServer().addRecipe(recipe);
     }
 }

@@ -9,9 +9,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.*;
+
+import java.util.List;
 
 public class Radio {
     private  static final String teamID = "Radio";
@@ -92,9 +97,16 @@ public class Radio {
 
     private static boolean isRadioZone(Location location){
         World world = location.getWorld();
+        String TAG = "RustPlayer";
         Block block = world.getHighestBlockAt(location);
-
-        return block.getY()>=location.getY();
+        boolean isBuilding  = false;
+        Plugin plugin = RustV2.getPlugin().getServer().getPluginManager().getPlugin("RustBuildSystem");
+        if(plugin!=null){
+            NamespacedKey key = new NamespacedKey(plugin,TAG);
+            PersistentDataContainer data = new CustomBlockData(block,plugin);
+            isBuilding = data.has(key,DataType.asList(DataType.LOCATION));
+        }
+        return block.getY()>=location.getY() && !isBuilding;
     }
     public static void Radiate(Player player){
 
