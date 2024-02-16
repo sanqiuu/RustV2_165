@@ -145,7 +145,7 @@ public class RustRecipe {
         key = new NamespacedKey(plugin, "BurstTower");
         list.add(key);
         recipe = new ShapedRecipe(key,item);
-        recipe.shape("AAX", "AAX", "XXX");
+        recipe.shape("AAX", "AAX", "AXX");
         recipe.setIngredient('A', Material.IRON_BLOCK);
         plugin.getServer().addRecipe(recipe);
         //Burst子弹
@@ -153,7 +153,7 @@ public class RustRecipe {
         key = new NamespacedKey(plugin, "BurstAmmo");
         list.add(key);
         recipe = new ShapedRecipe(key,item);
-        recipe.shape("AAX", "AAX", "XXX");
+        recipe.shape("AAX", "AAX", "AXX");
         recipe.setIngredient('A', Material.COBBLESTONE);
         plugin.getServer().addRecipe(recipe);
         //siege炮台
@@ -177,7 +177,7 @@ public class RustRecipe {
         key = new NamespacedKey(plugin, "slowTower");
         list.add(key);
         recipe = new ShapedRecipe(key,item);
-        recipe.shape("XXX", "AAX", "AAX");
+        recipe.shape("XXX", "AAX", "AAA");
         recipe.setIngredient('A', Material.IRON_BLOCK);
         plugin.getServer().addRecipe(recipe);
         //slow子弹
@@ -185,7 +185,7 @@ public class RustRecipe {
         key = new NamespacedKey(plugin, "slowAmmo");
         list.add(key);
         recipe = new ShapedRecipe(key,item);
-        recipe.shape("XXX", "AAX", "AAX");
+        recipe.shape("XXX", "AAX", "AAA");
         recipe.setIngredient('A', Material.COBBLESTONE);
         plugin.getServer().addRecipe(recipe);
         //heal炮台

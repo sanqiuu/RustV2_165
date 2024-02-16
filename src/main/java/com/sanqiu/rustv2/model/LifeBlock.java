@@ -55,7 +55,7 @@ public class LifeBlock {
             UUID uuid = container.get(key,DataType.UUID);
             if(uuid!=null && isLifeBlock()  && !player.getUniqueId().equals(uuid)){;
                 result = false;
-                player.sendMessage("操作失败，该装置由["+ Objects.requireNonNull(Bukkit.getPlayer(uuid)).getName()+"]放置");
+                player.sendMessage("操作失败，该装置由["+ Bukkit.getOfflinePlayer(uuid).getName()+"]放置");
             }
         }
         return result;
@@ -121,7 +121,7 @@ public class LifeBlock {
         UUID uuid = container.get(key,DataType.UUID);
         if(uuid!=null){
             if(!player.getUniqueId().equals(uuid)){
-                player.sendMessage("你不能破坏["+ Objects.requireNonNull(Bukkit.getPlayer(uuid)).getName()+"]放置的方块");
+                player.sendMessage("你不能破坏["+ Bukkit.getOfflinePlayer(uuid).getName()+"]放置的方块");
             }else {
                 can_break = true;
             }

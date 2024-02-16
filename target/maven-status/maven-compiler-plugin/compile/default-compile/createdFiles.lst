@@ -1,6 +1,7 @@
 com\sanqiu\rustv2\model\Ore.class
 com\sanqiu\rustv2\listener\RustRecipeListener.class
 com\sanqiu\rustv2\model\RespawnBed.class
+com\sanqiu\rustv2\util\MessageUtil.class
 com\sanqiu\rustv2\listener\LifeBlockListener.class
 com\sanqiu\rustv2\model\SupplyBoxUtil.class
 com\sanqiu\rustv2\model\Goods.class

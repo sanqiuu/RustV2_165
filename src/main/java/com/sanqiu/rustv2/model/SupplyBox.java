@@ -45,9 +45,11 @@ class SupplyData{
             new SUPPLY_ELEMENT(new ItemStack(Material.COAL,1),100),
             new SUPPLY_ELEMENT(new ItemStack(Material.REDSTONE,1),100),
             new SUPPLY_ELEMENT(new ItemStack(Material.COBBLESTONE,1),650),
-            new SUPPLY_ELEMENT(new ItemStack(Material.GOLD_ORE,1),45),
+            new SUPPLY_ELEMENT(new ItemStack(Material.GOLD_ORE,1),35),
             new SUPPLY_ELEMENT(new ItemStack(Material.GUNPOWDER,1),5),
             new SUPPLY_ELEMENT(new ItemStack(Material.IRON_ORE,1),100),
+            new SUPPLY_ELEMENT(new ItemStack(Material.NETHERITE_SCRAP,1),5),
+            new SUPPLY_ELEMENT(new ItemStack(Material.DIAMOND,1),5),
     };
 }
 class SupplyBoxUtil{
